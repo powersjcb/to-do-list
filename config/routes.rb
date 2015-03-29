@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  
-  resources :users
-  
-  resources :lists do
-    resources :items
+
+
+  get 'signup' => 'users#new'
+
+
+  resources :users do
+    resources :lists do
+      resources :items
+    end
   end
 end

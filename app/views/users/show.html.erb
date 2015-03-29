@@ -1,6 +1,12 @@
 <html>
   <h1><%= @user.name %></h1>
+  <h2>User lists</h2>
+  
   <div class="user-lists">
+    <% if @user.lists.length == 0 %>
+      <p class="notice">No lists yet</p>
+    <% end %>
+
     <% @user.lists.each do |list| %>
       <ul>
         <li><%= list.list_name %></li>
