@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1><%= @list[:list_name] %></h1>
+      <div class="item-list">
+        <ul>
+          <% @list.items.each do |item| %>
+            <li>
+              <%= item.name %>
+              <%=  %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<html>
+  <h1><%= @user.name %></h1>
+  <div class="user-lists">
+    <% @user.lists.each do |list| %>
+      <ul>
+        <li><%= list.list_name %></li>
+      </ul>
+    <% end %>
+  </div>
+</html>
