@@ -1,19 +1,28 @@
 class ListsController < ApplicationController
-  
+
 
   def show
     @list = List.find(params[:id])
   end
 
   def create
-    @user = User.find(:id)
-    @list = @user.lists.build(:list_name)
+    @user = User.find(params[:user_id])
+    @list = @user.lists.build(list_params)
     if @list.save
       flash[:success] = "List created"
-      redirect_to root_url
+      redirect_to @user
     else
-      redirect_to root_url
+      flash[:error] = "List not created"
+      redirect_to @user
     end
   end
+
+  private
+
+    def list_params
+      params.require("list_form").permit(:list_name)
+    end
+
+
 end
  

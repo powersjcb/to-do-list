@@ -2,15 +2,23 @@
   <body>
     <h1><%= @list[:list_name] %></h1>
       <div class="item-list">
+        <p><%= @list.items.length %> items</p>
         <ul>
           <% @list.items.each do |item| %>
             <li>
               <%= item.name %>
-              <%=  %>
             </li>
           <% end %>
       </ul>
     </div>
-    <!-- Post new item to list -->
+
+    <div class="form">
+      <%= form_for("item-form") do |f| %>
+        <%= f.text_area :name, :class => "form-control", :required => true %>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+
   </body>
 </html>
