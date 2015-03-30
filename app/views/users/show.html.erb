@@ -1,16 +1,17 @@
 <html>
-  <h1><%= @user.name %></h1>
-  <h2>User lists</h2>
-  
-  <div class="user-lists">
-    <% if @user.lists.length == 0 %>
-      <p class="notice">No lists yet</p>
-    <% end %>
-
-    <% @user.lists.each do |list| %>
-      <ul>
-        <li><%= list.list_name %></li>
-      </ul>
-    <% end %>
-  </div>
+  <body>
+    <h1><%= @user.name %></h1>
+    <h2>User lists</h2>
+    <div>
+      <% if @user.lists.length == 0 %>
+        <p class="notice">No lists yet</p>
+      <% end %>
+      <% @user.lists.each do |list| %>
+        <ul>
+          <li><%= link_to list.list_name, "/users/#{list.user_id}/lists/#{list.id}"%></li>
+        </ul>
+      <% end %>
+    </div>
+    <%= render "shared/list_form" %>
+  </body>
 </html>
