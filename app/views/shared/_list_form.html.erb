@@ -1,0 +1,6 @@
+<%= form_for(:item) do |f| %>
+  <%= f.text_area :list_name, :class => "form-control", 
+        placeholder: "New list name...", :required => true %>
+
+  <%= f.submit %>
+<% end %>
