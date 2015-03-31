@@ -8,9 +8,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "User created"
-      redirect_to @user
+      redirect_to :back
     else
-      render 'new'
+      flash[:error] = "User not created"
+      render :back
     end
   end
 

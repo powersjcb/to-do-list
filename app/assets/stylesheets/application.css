@@ -15,9 +15,6 @@
  */
 
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
-
 input, textarea, select, .uneditable-input {
   border: 1px, solid black;
   width: 50%;

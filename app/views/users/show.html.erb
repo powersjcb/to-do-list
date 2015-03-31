@@ -1,17 +1,13 @@
-<html>
-  <body>
-    <h1><%= @user.name %></h1>
-    <h2>User lists</h2>
-    <div>
-      <% if @user.lists.length == 0 %>
-        <p class="notice">No lists yet</p>
-      <% end %>
-      <% @user.lists.each do |list| %>
-        <ul>
-          <li><%= link_to list.list_name, "/users/#{list.user_id}/lists/#{list.id}"%></li>
-        </ul>
-      <% end %>
-    </div>
-    <%= render "shared/list_form" %>
-  </body>
-</html>
+<h1><%= @user.name %></h1>
+<h2>User lists</h2>
+<div class="container">
+  <% if @user.lists.length == 0 %>
+    <p class="notice">No lists yet</p>
+  <% end %>
+  <% @user.lists.each do |list| %>
+    <ul>
+      <li><%= link_to list.list_name, "/users/#{list.user_id}/lists/#{list.id}"%></li>
+    </ul>
+  <% end %>
+</div>
+<%= render "shared/list_form" %>

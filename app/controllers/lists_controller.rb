@@ -10,10 +10,10 @@ class ListsController < ApplicationController
     @list = @user.lists.build(list_params)
     if @list.save
       flash[:success] = "List created"
-      redirect_to @user
+      redirect_to :back
     else
       flash[:error] = "List not created"
-      redirect_to @user
+      redirect_to :back
     end
   end
 

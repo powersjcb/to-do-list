@@ -7,10 +7,10 @@ class ItemsController < ApplicationController
     # break
     if @item.save
       flash[:success] = "Item created"
-      redirect_to @user
+      redirect_to :back
     else
       flash[:error] = "Item not created"
-      redirect_to @user
+      redirect_to :back
     end
   end
 
