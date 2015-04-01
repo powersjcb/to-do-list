@@ -1,15 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  email      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 
 RSpec.describe User, type: :model do
   
-
-
-
-
   it "has fields: id, name, email, create_at, and updated_at" do
-
-
     user1 = User.new
     user1.name = "Jacob Powers"
     user1.email = "powersjcb@gmail.com"
@@ -33,6 +38,5 @@ RSpec.describe User, type: :model do
     user_invalid.name = ""
     expect(user_invalid).to_not be_valid
   end
-
 
 end
